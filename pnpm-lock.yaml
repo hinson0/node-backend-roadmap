@@ -210,6 +210,9 @@ importers:
       '@types/node':
         specifier: ^26.2.0
         version: 26.2.0
+      prettier:
+        specifier: ^3.9.6
+        version: 3.9.6
       tsx:
         specifier: ^4.23.12
         version: 4.23.12
@@ -508,6 +511,11 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
+  prettier@3.9.6:
+    resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   tsx@4.23.12:
     resolution: {integrity: sha512-FDf4L4sYzKtzWYhU/Xm0AQFdTjdIxNo9ElTf2mxXM6k8YMHXzYUe4yODVaXP4V9uMFbVg8c0qyBccK2OOxb45Q==}
     engines: {node: '>=18.0.0'}
@@ -696,6 +704,8 @@ snapshots:
 
   fsevents@2.3.3:
     optional: true
+
+  prettier@3.9.6: {}
 
   tsx@4.23.12:
     dependencies:

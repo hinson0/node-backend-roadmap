@@ -18,10 +18,21 @@ function getUser(): Promise<string> {
   })
 }
 
-getUser()
-  .then((value) => {
-    console.log(value)
-  })
-  .catch((error) => {
-    console.log(error.message)
-  })
+// getUser()
+//   .then((value) => {
+//     console.log(value)
+//   })
+//   .catch((error) => {
+//     console.log(error.message)
+//   })
+
+async function main() {
+  console.log('start')
+
+  const user = await getUser()
+
+  console.log(user)
+  console.log('end')
+}
+
+main()

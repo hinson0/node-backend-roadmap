@@ -6,13 +6,15 @@ console.log(p1)
 
 function getUser(): Promise<string> {
   return new Promise((resolve, reject) => {
-    const success = true
+    setTimeout(() => {
+      const success = true
 
-    if (success) {
-      resolve('11111111')
-    } else {
-      reject(new Error('not exists'))
-    }
+      if (success) {
+        resolve('11111111')
+      } else {
+        reject(new Error('not exists'))
+      }
+    }, 5000)
   })
 }
 

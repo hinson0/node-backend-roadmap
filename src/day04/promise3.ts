@@ -16,6 +16,10 @@ function getUser(): Promise<string> {
   })
 }
 
-getUser().then((value) => {
-  console.log(value)
-})
+getUser()
+  .then((value) => {
+    console.log(value)
+  })
+  .catch((error) => {
+    console.log(error.message)
+  })

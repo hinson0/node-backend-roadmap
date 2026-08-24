@@ -30,7 +30,7 @@ async function main() {
 // 1. 大概第几秒进入 catch？
 // 2s
 
-// 2. C 会不会继续执行到第 5 秒？
+// 2. C 会不会继续执行到第 3 秒？
 // 会. 因此.all不阻断promisei执行.
 
 // eg2:
@@ -41,7 +41,7 @@ const result = await Promise.all([
   Promise.resolve(true),
 ])
 
-console.log(result)
+// console.log(result)
 // 10, hello, true
 
 // eg3:
@@ -51,19 +51,40 @@ console.log(result)
 
 async function gerUser() {
   await sleep(1000)
+  return 'user'
 }
 
 async function getOrders() {
   await sleep(2000)
+  throw new Error('boom...')
+  // return ['order1', 'order2']
 }
 
 async function getCoupons() {
   await sleep(3000)
+  return ['coupon1', 'coupon2']
 }
 
 async function main2() {
-  const result = await Promise.all([gerUser(), getOrders(), getCoupons()])
+  try {
+    // 这里拿不到result的结果
+    // 因为.all()只要有一个失败了 整个.all就返回reject.只会出发errorn分支
+    const result = await Promise.all([gerUser(), getOrders(), getCoupons()])
+    console.log(result)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+// main2()
+
+async function main3() {
+  const result = await Promise.allSettled([
+    task('A', 1000),
+    task('B', 2000, false),
+    task('C', 3000),
+  ])
   console.log(result)
 }
 
-main2()
+main3()

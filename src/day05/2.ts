@@ -84,7 +84,14 @@ async function main3() {
     task('B', 2000, false),
     task('C', 3000),
   ])
-  console.log(result)
+
+  for (const item of result) {
+    if (item.status === 'fulfilled') {
+      console.log('done...')
+    } else {
+      console.error(item)
+    }
+  }
 }
 
 main3()

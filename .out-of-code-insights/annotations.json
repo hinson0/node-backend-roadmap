@@ -1,4 +1,52 @@
 {
   "schemaVersion": 2,
-  "annotations": []
+  "annotations": [
+    {
+      "fileUri": "comment://outofcodeinsights.comments/jacquesgariepy.out-of-code-insights/commentinput-2e629f31-7b1d-4c5e-85c5-5cc85c85fd6a-3.md",
+      "file": "\\jacquesgariepy.out-of-code-insights\\commentinput-2e629f31-7b1d-4c5e-85c5-5cc85c85fd6a-3.md",
+      "origin": {
+        "kind": "manual"
+      },
+      "message": "为什么getOrders不用async function",
+      "author": "Anonymous",
+      "timestamp": "2026-09-03T14:20:22.077Z",
+      "languageId": "markdown",
+      "id": "38b984ca-6c53-43cb-a9b5-259ef0d24e81",
+      "schemaVersion": 2,
+      "startOffset": 29,
+      "endOffset": 32,
+      "lineHash": "9fab8fd9",
+      "contextBefore": [],
+      "contextAfter": [],
+      "state": "active",
+      "resolved": true
+    },
+    {
+      "fileUri": "file:///c%3A/Users/hinso/repos/node-backend-roadmap/src/day07/exercise.ts",
+      "file": "src/day07/exercise.ts",
+      "origin": {
+        "kind": "manual"
+      },
+      "message": "为什么getOrders不用async function ...",
+      "author": "Anonymous",
+      "timestamp": "2026-09-03T14:21:05.852Z",
+      "languageId": "typescript",
+      "id": "1e1e1185-2562-43bf-9d9d-e27a59cf3ca7",
+      "schemaVersion": 2,
+      "startOffset": 986,
+      "endOffset": 1040,
+      "lineHash": "872897b2",
+      "contextBefore": [
+        "console.log(typeof getUser2(2)) // object",
+        "console.log(getUser2(3) instanceof Promise) // true",
+        ""
+      ],
+      "contextAfter": [
+        "const orders: Order[] = [",
+        "{ id: 1, userId: userId, amount: 39.1, status: 'pending' },",
+        "{ id: 2, userId: userId, amount: 31.1, status: 'cancelled' },"
+      ],
+      "state": "active"
+    }
+  ]
 }

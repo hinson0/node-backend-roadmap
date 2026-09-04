@@ -96,3 +96,52 @@ K: key的类型变量
 V: value的类型变量
 E: element的类型变量
  */
+
+// 12 多个泛型参数
+type Pair<K, V> = {
+  key: K
+  value: V
+}
+
+const item: Pair<string, number> = {
+  key: 'age',
+  value: 18,
+}
+
+const user: Pair<number, string> = {
+  key: 1,
+  value: 'yangzi',
+}
+
+const order: Pair<number, string> = {
+  key: 1,
+  value: 'macbook pro',
+}
+
+// 13 分页结构
+type Page<T> = {
+  // items, total, page, pageSize
+  items: T[]
+  total: number
+  page: number
+  pageSize: number
+}
+
+type User2 = {
+  id: number
+  name: string
+}
+
+const result: Page<User2> = {
+  // items, total, page, pageSize
+  items: [
+    { id: 1, name: 'yangzi' },
+    { id: 2, name: 'cgh' },
+  ],
+  total: 2,
+  page: 1,
+  pageSize: 20,
+}
+
+// console.log(typeof result['items']) // objec。因为数组的类型就是object
+// console.log(result['items'] instanceof User2[]) // User2是typescript的类型，编译成js后就没了。不能拿来instanceof

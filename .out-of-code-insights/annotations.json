@@ -22,7 +22,7 @@
       "resolved": true
     },
     {
-      "fileUri": "file:///c%3A/Users/hinso/repos/node-backend-roadmap/src/day07/exercise.ts",
+      "fileUri": "file:///Users/a114514/repos/node-backend-roadmap/src/day07/exercise.ts",
       "file": "src/day07/exercise.ts",
       "origin": {
         "kind": "manual"
@@ -46,7 +46,16 @@
         "{ id: 1, userId: userId, amount: 39.1, status: 'pending' },",
         "{ id: 2, userId: userId, amount: 31.1, status: 'cancelled' },"
       ],
-      "state": "active"
+      "state": "active",
+      "resolved": true,
+      "thread": [
+        {
+          "id": "f2f4a0ef-ff3a-4143-bb68-4b88fbccbbed",
+          "message": "可以用 普通函数在里面自己promoise.resolve\n\n如果是async function,则直接return 普通值",
+          "author": "Anonymous",
+          "timestamp": "2026-09-04T01:12:45.378Z"
+        }
+      ]
     }
   ]
 }

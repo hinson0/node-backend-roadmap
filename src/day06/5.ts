@@ -63,5 +63,5 @@ let nickname: string | undefined
     userId: number
     amount: number
   }[]
-  为什么这些对象类型一直重复写很烦？ sha
+  为什么这些对象类型一直重复写很烦？ 因为一直重复出现,抽象出来这样就ssot single source of truth.
  */

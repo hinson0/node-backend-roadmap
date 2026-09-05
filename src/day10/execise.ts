@@ -26,7 +26,7 @@ console.log(productList)
 // 创建 ProductWithoutDescription
 //
 // Product 除了 description 全部保留
-type ProductWithoutDescripion = Omit<Product, 'description'>
+type ProductWithoutDescription = Omit<Product, 'description'>
 
 // TODO 3
 // 创建 UpdateProduct
@@ -83,5 +83,10 @@ type ErrorMessageMap = Record<ApiError['type'], string>
     internal: string;
   }
 
-  这里就拿到了
+  这里就拿到了ApiError['type']的字符串字面量类型了.
  */
+const errorTitles: ErrorMessageMap = {
+  validation: '参数错误',
+  not_found: '资源不存在',
+  internal: '服务错误',
+}

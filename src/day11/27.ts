@@ -23,6 +23,8 @@
 // 而microtask 队列需要每个callback执行完毕后,才会来执行nextTick+microtask
 // NOTE: await 后续会在异步 continuation / microtask 中继续。
 // 这句话怎么理解???
+// 这句话这么理解: await用promise reaction挂起并恢复async函数;恢复动作由microtask调度.
+// 会报存局部变量,执行文件,执行到哪一行,await可以从这里恢复.
 
 // 7 setTimeout(fn, 1000) 是否保证 1000ms 时执行？ 不保证,理由同2
 

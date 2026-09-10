@@ -77,4 +77,6 @@ await unlink('./src/day12/hello2.txt')
 //  stat
 // unlink
 
-// 28 TODO:
+// 28 文件不存在则会报错: ENOENT
+
+//

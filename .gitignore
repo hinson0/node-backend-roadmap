@@ -1,2 +1,3 @@
 node_modules
 .smart
+src/day14/1.ts

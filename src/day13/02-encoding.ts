@@ -89,4 +89,57 @@ console.log(data76.toString())
 // 因此.txt/json/js 等文本文件 可以 toString() 可以 encoding=utf-8
 // 但 jpg/png/mp4/zip/pdf 等文件本质非 文本存储的资源 需要直接处理 buffer
 
-// 12 TODO:
+// 12 转换为 hex
+const buf = Buffer.from('abc')
+console.log(buf.toString('hex')) // 616263
+console.log(buf.toString('binary')) // abc
+console.log(buf.toString('utf-8')) // abc
+
+// 重一个 hex 拿到字符
+const buffer = Buffer.from('616263', 'hex')
+console.log(buffer.toString()) // abc
+
+// 13 base64 也是一种用:用文本表示二进制的一种编码方式.
+// Buffer：是一块内存中的字节数据
+// Base64：是一种文本编码格式
+// Base64 本身并不保存“原始二进制形态”，而是用字符来表示这些二进制数据
+const buf104 = Buffer.from('yzb')
+console.log(buf104) // <Buffer 79 7a 62>
+console.log(buf104.toString('base64')) // eXpi
+console.log(buf104.toString('utf-8')) // yzb
+// 也就是说 yzb 这个字符串的 hex 表示是: 79 7a 62 .
+// 然后 base64 的表示是: eXpi
+
+// 反着来
+const base64 = 'eXpi'
+const buf115 = Buffer.from(base64, 'base64')
+console.log(buf115) // <Buffer 79 7a 62>
+console.log(buf115.toString()) // yzb
+// 也就说 base64 是字符串,但内容表示的是字符串代表的二进制内容
+
+// 14 : Buffer.slice/subarray
+const buf121 = Buffer.from('hello world')
+const part = buf121.subarray(0, 2)
+console.log(part.toString()) // he
+
+// Buffer 有一个重要概念：part 被修改后,原 buffer 也会跟着改变
+// 不是复制数据
+// 而是引用原内存的一部分
+part[0] = 72
+console.log(buf121.toString('utf-8')) // Hello world
+
+// 15 Buffer.copy()
+const source = Buffer.from('abc')
+const target = Buffer.alloc(source.length)
+source.copy(target)
+
+target[0] = 72
+console.log(source.toString()) // hello world 这个不变
+console.log(target.toString()) // Hello world 这个变成了大写
+
+// 16.Buffer 可以保存数字
+const buf141 = Buffer.alloc(4)
+buf141.writeInt32BE(1000)
+console.log(buf141) // <Buffer 00 00 03 e8>
+console.log(buf141.readInt32BE()) // 1000
+// Buffer可以装很多东西;文字.图片.视频.音频.PDF.PPT.DOC.EXCEL.ZIP.等等

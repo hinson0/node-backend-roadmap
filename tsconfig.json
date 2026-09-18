@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "types": ["node"],
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "moduleDetection": "force"
   }
 }

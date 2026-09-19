@@ -43,4 +43,31 @@ if (result.success) {
 //     path: [ 'age' ],
 //     message: 'Invalid input: expected number, received string'
 //   }
-// ]
+//
+
+// 5 z.infer
+type User = z.infer<typeof UserSchema>
+// UserSchema负责在runtime检查
+// 推导出来的类型,给ts用的.
+
+// 6 可选值,默认值和限定值
+const AccountSchema = z.object({
+  nickname: z.string().optional(),
+  role: z.enum(['admin', 'member']).default('member'),
+})
+
+console.log(AccountSchema.parse({}))
+
+const xx = AccountSchema.safeParse({
+  role: 'boos',
+})
+console.log(xx)
+// { success: false, error: [Getter/Setter] }
+
+console.log(xx.error)
+// invalid option: expected one of admin , member
+
+// coerce 强制转换
+const ageSchema = z.coerce.number().int().min(8)
+const result2 = ageSchema.parse('20')
+console.log(result2)

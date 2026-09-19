@@ -1,0 +1,19 @@
+{
+  // 使用 IntelliSense 了解相关属性。
+  // 悬停以查看现有属性的描述。
+  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "启动程序",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}",
+      "runtimeArgs": ["--experimental-transform-types"],
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "C:\\Users\\hinso\\AppData\\Local\\fnm_multishells\\14872_1789394332525\\node.exe",
+      "outFiles": ["${workspaceFolder}/**/*.js"]
+    }
+  ]
+}
